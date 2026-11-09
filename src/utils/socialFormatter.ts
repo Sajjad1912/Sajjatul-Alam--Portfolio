@@ -32,7 +32,7 @@ export interface ProjectItem {
 
 export const DEFAULT_SOCIAL_CONFIG: SocialProfileConfig = {
   github: 'https://github.com/Sajjad1912',
-  linkedin: 'https://www.linkedin.com/in/sajjatul-alam-bhuiyan',
+  linkedin: 'https://www.linkedin.com/in/sajjatul-alam-bhuiyan-6a33a7315/',
   email: 'sajjatulsunny@gmail.com',
   cvUrl: '/assets/aistudio/Sajjad_dec47f9b.pdf',
   photoUrl: '/assets/aistudio/Sajjad_786d1e19.jpg',
