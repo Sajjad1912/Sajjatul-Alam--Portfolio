@@ -1,0 +1,6 @@
+.aistudio/
+.vercel/
+metadata.json
+.env*
+node_modules/
+dist/
