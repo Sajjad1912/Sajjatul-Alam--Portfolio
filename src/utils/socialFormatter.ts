@@ -191,7 +191,6 @@ export function formatGmailButton(rawInput: string): FormattedSocialButton {
     email = `${email}@gmail.com`;
   }
 
-  const mailtoHref = `mailto:${email}`;
   const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
 
   return {
@@ -200,11 +199,11 @@ export function formatGmailButton(rawInput: string): FormattedSocialButton {
     actionLabel: 'Send Mail',
     cardSubtitle: 'Direct email for inquiries & roles',
     cardBadge: 'Drop a Message',
-    href: mailtoHref,
+    href: gmailComposeUrl,
     webHref: gmailComposeUrl,
     displayHandle: email,
     shortHandle: email,
-    isExternal: false,
+    isExternal: true,
     copyValue: email,
   };
 }

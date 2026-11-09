@@ -44,15 +44,22 @@ test('formatLinkedInButton formats slug and full LinkedIn URLs properly', () => 
   assert.equal(fromUrl.shortHandle, 'in/sajjatul-alam-bhuiyan');
 });
 
-test('formatGmailButton formats raw email or username into mailto and Gmail compose links', () => {
+test('formatGmailButton formats raw email or username into Gmail web compose links', () => {
   const fromEmail = formatGmailButton('sajjatulsunny@gmail.com');
-  assert.equal(fromEmail.href, 'mailto:sajjatulsunny@gmail.com');
+  assert.equal(
+    fromEmail.href,
+    'https://mail.google.com/mail/?view=cm&fs=1&to=sajjatulsunny%40gmail.com'
+  );
+  assert.equal(fromEmail.href, fromEmail.webHref);
   assert.equal(fromEmail.displayHandle, 'sajjatulsunny@gmail.com');
   assert.equal(fromEmail.label, 'Gmail');
-  assert.ok(fromEmail.webHref.includes('mail.google.com'));
+  assert.equal(fromEmail.isExternal, true);
 
   const fromUsername = formatGmailButton('sajjatulsunny');
-  assert.equal(fromUsername.href, 'mailto:sajjatulsunny@gmail.com');
+  assert.equal(
+    fromUsername.href,
+    'https://mail.google.com/mail/?view=cm&fs=1&to=sajjatulsunny%40gmail.com'
+  );
   assert.equal(fromUsername.copyValue, 'sajjatulsunny@gmail.com');
 });
 
